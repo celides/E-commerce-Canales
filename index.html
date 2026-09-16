@@ -73,10 +73,6 @@
     color:#fff !important;
     border-color:var(--ec-primary) !important;
   }
-  .visited:hover{
-    background:var(--ec-primary-dark) !important;
-    border-color:var(--ec-primary-dark) !important;
-  }
   .btn.visited,.btn-sm.visited,.cta-btn.visited{
     background:var(--ec-primary) !important;
     color:#fff !important;
@@ -127,10 +123,10 @@
   .avatar-wrap img{
     width:100%;height:100%;
     object-fit:cover;
-    object-position:center 25%;
+    object-position:center 20%;
     display:block;
-    transform:scale(1.35);
-    transform-origin:center 30%;
+    transform:scale(1.25);
+    transform-origin:center 25%;
   }
   .name{font-size:26px;font-weight:700;margin-top:14px;line-height:1.2;color:var(--ec-primary);}
   .headline{
@@ -357,7 +353,7 @@
   .wa-float:hover{transform:scale(1.08);text-decoration:none;}
   .wa-float svg{width:30px;height:30px;fill:#fff;}
 
-  /* MATCH BOX — para mostrar encaje con la vacante */
+  /* MATCH BOX */
   .match-box{
     background:linear-gradient(135deg,#f0f9f9 0%,#e8f6f6 100%);
     border:1px solid #c5e5e5;
@@ -386,6 +382,36 @@
   }
   .match-box strong{color:var(--ec-primary);}
 
+  /* MAPA */
+  .map-wrap{
+    border-radius:10px;
+    overflow:hidden;
+    border:1px solid var(--ec-border);
+    margin-top:14px;
+    height:280px;
+    position:relative;
+  }
+  .map-wrap iframe{
+    width:100%;height:100%;border:0;display:block;
+  }
+  .map-info{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:14px;
+    font-size:13px;
+  }
+  .map-info .pill{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:#EAF1F8;
+    color:var(--ec-primary);
+    padding:6px 14px;
+    border-radius:14px;
+    font-weight:600;
+  }
+
   @media (max-width:640px){
     .container{padding:8px;}
     .card-pad{padding:18px;}
@@ -399,6 +425,7 @@
     .cta-final h3{font-size:18px;}
     .section-title{font-size:15px;}
     .tools-grid{grid-template-columns:1fr;}
+    .map-wrap{height:220px;}
   }
 
   @media print{
@@ -413,6 +440,7 @@
     }
     .cta-final{display:none !important;}
     .btn,.btn-sm{display:none !important;}
+    .map-wrap{height:220px;}
     a{color:var(--ec-text);}
   }
 </style>
@@ -447,10 +475,10 @@
         Gestión de proyectos · Catálogo digital · Coordinación con distribuidores
       </div>
       <div class="location">
-        📍 Querétaro, Qro. · Disponibilidad presencial · Zona Zibata / Zakia
+        📍 Querétaro, Qro. · Barrio de San Francisquito (junto a Plaza de las Américas) · Movilidad propia (moto y auto)
       </div>
       <div class="availability-pill">
-        ✅ Ingreso inmediato · Licenciatura terminada
+        ✅ Ingreso inmediato · Título profesional · Licenciatura terminada
       </div>
 
       <div class="contact-row">
@@ -461,16 +489,17 @@
     </div>
   </div>
 
-  <!-- MATCH CON LA VACANTE -->
+  <!-- MATCH -->
   <div class="card card-pad">
     <div class="match-box">
       <h3>🎯 Por qué encajo en esta vacante</h3>
       <ul>
-        <li><strong>Gestión de proyectos y coordinación:</strong> 5+ años liderando iniciativas comerciales y operativas, con seguimiento puntual hasta cierre.</li>
+        <li><strong>Gestión de proyectos y coordinación:</strong> 10+ años liderando iniciativas comerciales, operativas e inmobiliarias, con seguimiento puntual hasta cierre.</li>
         <li><strong>Organización de información y catálogos:</strong> experiencia estructurando datos de producto, precios y contenidos para distintos canales.</li>
-        <li><strong>Coordinación con distribuidores y equipos:</strong> trabajo constante con proveedores, áreas de diseño y equipos multidisciplinarios.</li>
-        <li><strong>Perfil analítico + técnico:</strong> licenciatura terminada, bootcamp Fullstack, uso avanzado de Google Sheets/Excel y familiaridad con ERPs.</li>
-        <li><strong>Disponibilidad:</strong> vivo en zona cercana (Zibata/Zakia), horario L-V 9-6 compatible.</li>
+        <li><strong>Coordinación con distribuidores y equipos:</strong> trabajo constante con proveedores, áreas de diseño, mantenimiento y equipos multidisciplinarios.</li>
+        <li><strong>Fotografía de producto:</strong> Licenciado en Artes Visuales con especialidad en fotografía publicitaria; capacidad de validar requisitos técnicos de imagen para Amazon, Mercado Libre y Liverpool.</li>
+        <li><strong>Perfil analítico + técnico:</strong> bootcamp Fullstack, uso avanzado de Google Sheets/Excel y familiaridad con ERPs.</li>
+        <li><strong>Disponibilidad:</strong> movilidad propia (moto y auto), 25-30 min a Terrapark Centenario, horario L-V 9-6 compatible.</li>
       </ul>
     </div>
   </div>
@@ -479,12 +508,13 @@
   <div class="card card-pad">
     <h2 class="section-title">Perfil Profesional</h2>
     <p style="font-size:14px;line-height:1.75;">
-      Coordinador con más de <strong>5 años de experiencia en gestión de proyectos comerciales y operativos</strong>,
+      Coordinador con más de <strong>10 años de experiencia en gestión de proyectos comerciales, operativos e inmobiliarios</strong>,
       con foco en <strong>organización de información, seguimiento puntual y cumplimiento de tiempos</strong>.
-      Perfil híbrido <strong>técnico + comercial</strong>: combino la disciplina de un desarrollador Fullstack
-      (estructura, procesos, datos) con la ejecución de un ejecutivo de ventas (comunicación, negociación,
-      coordinación con clientes y proveedores). Experiencia trabajando con <strong>checklists, procesos
-      estructurados y coordinación entre áreas</strong> (diseño, catálogo, plataformas).
+      Perfil híbrido <strong>técnico + comercial + creativo</strong>: combino la disciplina de un desarrollador Fullstack
+      (estructura, procesos, datos) con la ejecución operativa de un coordinador de proyectos (comunicación, negociación,
+      coordinación con clientes y proveedores) y la visión de un <strong>Licenciado en Artes Visuales especializado en
+      fotografía de producto</strong>. Experiencia trabajando con checklists, procesos estructurados y coordinación
+      entre áreas (diseño, catálogo, mantenimiento, plataformas).
     </p>
   </div>
 
@@ -493,14 +523,14 @@
     <h2 class="section-title">Herramientas y Plataformas</h2>
     <div class="tools-grid">
       <div class="tool-card">
-        <div class="t-ico">Odoo</div>
+        <div class="t-ico">📦</div>
         <div class="t-info">
           <div class="t-name">Odoo ERP</div>
           <div class="t-level">Familiaridad · aprendizaje activo</div>
         </div>
       </div>
       <div class="tool-card">
-        <div class="t-ico">A</div>
+        <div class="t-ico">✅</div>
         <div class="t-info">
           <div class="t-name">Asana</div>
           <div class="t-level">Gestión de tareas y proyectos</div>
@@ -528,10 +558,10 @@
         </div>
       </div>
       <div class="tool-card">
-        <div class="t-ico">💻</div>
+        <div class="t-ico">🎨</div>
         <div class="t-info">
-          <div class="t-name">Herramientas IA</div>
-          <div class="t-level">ChatGPT, Claude, Gemini</div>
+          <div class="t-name">Photoshop / Lightroom</div>
+          <div class="t-level">Edición e imágenes de producto</div>
         </div>
       </div>
     </div>
@@ -541,6 +571,25 @@
   <div class="card card-pad">
     <h2 class="section-title">Experiencia Profesional</h2>
 
+    <!-- RENTOLOGÍA -->
+    <div class="exp-item">
+      <div class="exp-logo" style="background:#0f4c81;border-color:#0a3659;">R</div>
+      <div class="exp-body">
+        <div class="exp-role">Director de Operaciones · Gestión de Proyectos Inmobiliarios</div>
+        <div class="exp-company">Rentología · Administración de propiedades en Querétaro</div>
+        <div class="exp-meta">Querétaro, Qro. · 2014 – Presente</div>
+        <ul class="exp-desc">
+          <li><strong>Gestión integral de 3 propiedades</strong> en Querétaro (2 casas + 1 departamento), con un total de <strong>10 habitaciones</strong> administradas y servicios incluidos.</li>
+          <li><strong>Coordinación con proveedores</strong> de servicios básicos: agua, gas, luz, internet, telefonía y limpieza de áreas comunes.</li>
+          <li><strong>Remodelación y reconfiguración de espacios</strong> para maximizar la rentabilidad: seccionamiento de casas completas en habitaciones individuales con baño compartido o privado.</li>
+          <li><strong>Atención directa a inquilinos</strong> y post-venta: resolución de incidencias, seguimiento a contratos, cobranza y renovaciones.</li>
+          <li><strong>Control de calidad</strong> en cada entrega: espacios listos, servicios funcionando, estándares de limpieza y habitabilidad.</li>
+          <li class="highlight"><strong>Logro destacado:</strong> reconfiguré propiedades que se rentaban completas por $3,000 MXN, transformándolas en habitaciones individuales con servicios incluidos, alcanzando ingresos de <strong>$9,000 a $12,000 MXN mensuales por propiedad</strong>, triplicando el retorno para el dueño.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- MEGACABLE -->
     <div class="exp-item">
       <div class="exp-logo" style="background:#E30613;border-color:#b60510;">M</div>
       <div class="exp-body">
@@ -557,6 +606,7 @@
       </div>
     </div>
 
+    <!-- CONSULTOR -->
     <div class="exp-item">
       <div class="exp-logo">CS</div>
       <div class="exp-body">
@@ -567,11 +617,12 @@
           <li><strong>Gestión de proyectos B2B</strong>: coordinación de implementaciones de infraestructura y soluciones digitales con clientes corporativos.</li>
           <li><strong>Diseño de embudos y procesos</strong> de prospección B2B/B2C con herramientas digitales (Meta Ads, IA, CRM).</li>
           <li>Coordinación con <strong>múltiples áreas internas y proveedores externos</strong> para asegurar cumplimiento de entregables.</li>
-          <li>Reporte de avances a tomadores de decisión (directores, gerentes, CTOs) de forma <strong>clara y estructurada</strong>.</li>
+          <li>Reporte de avances a tomadores de decisión de forma <strong>clara y estructurada</strong>.</li>
         </ul>
       </div>
     </div>
 
+    <!-- IEA -->
     <div class="exp-item">
       <div class="exp-logo">IEA</div>
       <div class="exp-body">
@@ -586,6 +637,7 @@
       </div>
     </div>
 
+    <!-- FASHION CELULAR -->
     <div class="exp-item">
       <div class="exp-logo">FC</div>
       <div class="exp-body">
@@ -601,6 +653,7 @@
       </div>
     </div>
 
+    <!-- MULTIPACK -->
     <div class="exp-item">
       <div class="exp-logo">MP</div>
       <div class="exp-body">
@@ -614,6 +667,7 @@
       </div>
     </div>
 
+    <!-- INE -->
     <div class="exp-item">
       <div class="exp-logo" style="background:#6B1F2E;border-color:#4a1420;">INE</div>
       <div class="exp-body">
@@ -629,6 +683,36 @@
 
   </div>
 
+  <!-- FOTOGRAFÍA DE PRODUCTO -->
+  <div class="card card-pad">
+    <h2 class="section-title">Fotografía de Producto &amp; Contenido Visual</h2>
+    <p style="font-size:13.5px;line-height:1.7;margin-bottom:14px;">
+      Fotógrafo profesional con <strong>Licenciatura en Artes Visuales</strong> y formación especializada en
+      <strong>fotografía de producto, publicitaria y de estudio</strong>. Capacidad para producir imágenes que
+      cumplan los requisitos técnicos de plataformas e-commerce (fondo blanco, alta resolución, ángulos múltiples,
+      iluminación controlada). Experiencia en <strong>postproducción</strong> con Photoshop y Lightroom, y en
+      <strong>dirección de arte</strong> para catálogos de producto.
+    </p>
+    <div class="tags" style="margin-bottom:14px;">
+      <span class="tag">Fotografía de producto</span>
+      <span class="tag">Fotografía publicitaria</span>
+      <span class="tag">Fotografía de estudio</span>
+      <span class="tag">Fotografía de moda</span>
+      <span class="tag">Retoque digital</span>
+      <span class="tag">Iluminación</span>
+      <span class="tag">Dirección de arte</span>
+      <span class="tag">Composición visual</span>
+      <span class="tag tag-alt">Photoshop 80%</span>
+      <span class="tag tag-alt">Lightroom 60%</span>
+    </div>
+    <div class="contact-row">
+      <a href="https://www.behance.net/JuanCarlosPerezMtz" target="_blank" rel="noopener" class="btn btn-outline" data-visited="behance">🎨 Behance</a>
+      <a href="https://www.flickr.com/photos/juancarlosperezmartinez/" target="_blank" rel="noopener" class="btn btn-outline" data-visited="flickr">📷 Flickr</a>
+      <a href="https://www.viewbug.com/member/juancarlosperezmartinez" target="_blank" rel="noopener" class="btn btn-outline" data-visited="viewbug">📸 ViewBug</a>
+      <a href="https://www.saatchiart.com/en-mx/celides" target="_blank" rel="noopener" class="btn btn-outline" data-visited="saatchi">🖼️ Saatchi Art</a>
+    </div>
+  </div>
+
   <!-- EDUCACIÓN -->
   <div class="card card-pad">
     <h2 class="section-title">Educación</h2>
@@ -638,7 +722,7 @@
       <div>
         <div class="edu-role">Licenciatura en Artes Visuales</div>
         <div class="edu-inst">Universidad de las Artes — Aguascalientes</div>
-        <div class="edu-meta">Título profesional · Cédula en trámite</div>
+        <div class="edu-meta">2012 – 2017 · Título profesional obtenido (examen profesional: octubre 2019)</div>
       </div>
     </div>
 
@@ -648,6 +732,14 @@
         <div class="edu-role">Bootcamp Fullstack Developer</div>
         <div class="edu-inst">Academia Internacional Funval &amp; Mentors International</div>
         <div class="edu-meta">Frontend, Backend, automatización y gestión de datos</div>
+      </div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-icon">📘</div>
+      <div>
+        <div class="edu-role">Certificado de Secundaria Terminada</div>
+        <div class="edu-inst">Documento disponible para contratación</div>
       </div>
     </div>
 
@@ -667,8 +759,9 @@
       <span class="tag">Reporte de avances</span>
       <span class="tag">Google Sheets avanzado</span>
       <span class="tag">Documentación de producto</span>
-      <span class="tag-accent">Atención al detalle</span>
-      <span class="tag-accent">Comunicación clara</span>
+      <span class="tag tag-accent">Atención al detalle</span>
+      <span class="tag tag-accent">Comunicación clara</span>
+      <span class="tag tag-accent">Fotografía de producto</span>
       <span class="tag tag-alt">Trabajo bajo presión</span>
       <span class="tag tag-alt">Adaptabilidad</span>
       <span class="tag tag-alt">Proactividad</span>
@@ -682,9 +775,34 @@
       <li><strong>E-commerce y Marketing Digital</strong> — Mentors International (2021)</li>
       <li><strong>Creando tu Página Web Profesional</strong> — Mentors International (2021)</li>
       <li><strong>Elementor Avanzado</strong> — Webempresa University (2021)</li>
+      <li><strong>Ventas y Servicio al Cliente</strong> — Weber State University &amp; Mentors International (2021)</li>
       <li><strong>Innovación y Emprendimiento</strong> — CCIA Aguascalientes (2018)</li>
       <li><strong>Networking: Relaciones Ganar-Ganar</strong> — CCIA (2018)</li>
     </ul>
+  </div>
+
+  <!-- UBICACIÓN Y MOVILIDAD -->
+  <div class="card card-pad">
+    <h2 class="section-title">Ubicación y Movilidad</h2>
+    <p style="font-size:13.5px;line-height:1.7;margin-bottom:12px;">
+      Vivo en el <strong>Barrio de San Francisquito</strong>, junto a Plaza de las Américas, en Querétaro.
+      Cuento con <strong>movilidad propia (motocicleta y automóvil)</strong>, lo que me permite llegar a
+      <strong>Terrapark Centenario en 25-30 minutos</strong> incluso en hora pico.
+    </p>
+    <div class="map-info">
+      <span class="pill">🏠 Barrio de San Francisquito, Querétaro</span>
+      <span class="pill">🏍️ Motocicleta propia</span>
+      <span class="pill">🚗 Automóvil propio</span>
+      <span class="pill">⏱️ 25-30 min a Terrapark Centenario</span>
+    </div>
+    <div class="map-wrap">
+      <iframe
+        src="https://www.google.com/maps?q=Barrio+de+San+Francisquito,+Quer%C3%A9taro,+Qro.&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Ubicación — Barrio de San Francisquito, Querétaro">
+      </iframe>
+    </div>
   </div>
 
   <!-- DISPONIBILIDAD -->
@@ -696,8 +814,8 @@
         <span><strong>Horario:</strong> Lunes a viernes, 9:00 am – 6:00 pm</span>
       </div>
       <div style="display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px dashed var(--ec-border);">
-        <span style="color:var(--ec-accent-dark);font-weight:800;">📍</span>
-        <span><strong>Ubicación:</strong> Querétaro · Zona Zibata / Zakia · Disponibilidad presencial en Terrapark Centenario</span>
+        <span style="color:var(--ec-accent-dark);font-weight:800;">🎓</span>
+        <span><strong>Formación:</strong> Licenciatura en Artes Visuales (título profesional obtenido) + Bootcamp Fullstack</span>
       </div>
       <div style="display:flex;gap:10px;align-items:center;padding:8px 0;">
         <span style="color:var(--ec-accent-dark);font-weight:800;">⚡</span>
@@ -726,7 +844,7 @@
   <div class="footer">
     © <span id="year"></span> Juan Carlos Pérez Martínez · CV Coordinador E-commerce
     <br>
-    <span class="version">📌 Versión E-commerce 1.0</span>
+    <span class="version">📌 Versión E-commerce 2.0 — Rentología + Fotografía + Mapa</span>
   </div>
 
 </div>
@@ -741,7 +859,7 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  const VISITED_KEY = 'jc_cv_ecommerce_visited';
+  const VISITED_KEY = 'jc_cv_ecommerce_v2_visited';
   function getVisited(){
     try { return JSON.parse(localStorage.getItem(VISITED_KEY)) || []; }
     catch(e){ return []; }
