@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juan Carlos Pérez Martínez — Coordinación de Operaciones E-commerce & Canales</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --li-blue:#0A66C2;
+    --li-blue-dark:#004182;
+    --li-bg:#F3F2EF;
+    --li-card:#FFFFFF;
+    --li-text:#191919;
+    --li-muted:#666666;
+    --li-border:#E0E0E0;
+    --li-green:#057642;
+    --li-wa:#25D366;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Inter',sans-serif;background:var(--li-bg);color:var(--li-text);font-size:14px;line-height:1.6;}
+  a{color:var(--li-blue);text-decoration:none;}
+  .topbar{background:#fff;border-bottom:1px solid var(--li-border);position:sticky;top:0;z-index:100;padding:8px 0;}
+  .topbar-inner{max-width:900px;margin:0 auto;padding:0 16px;display:flex;align-items:center;justify-content:space-between;}
+  .logo-li{font-weight:800;font-size:18px;color:var(--li-blue);}
+  .logo-li span{background:var(--li-blue);color:#fff;padding:1px 6px;border-radius:3px;margin-right:4px;}
+  .btn-sm{background:#fff;color:var(--li-blue);border:1.5px solid var(--li-blue);padding:6px 12px;border-radius:16px;font-size:12px;font-weight:600;cursor:pointer;}
+  .btn-sm.download{background:var(--li-green);color:#fff;border-color:var(--li-green);}
+  .container{max-width:900px;margin:0 auto;padding:16px;}
+  .card{background:var(--li-card);border:1px solid var(--li-border);border-radius:10px;margin-bottom:12px;overflow:hidden;}
+  .card-pad{padding:24px;}
+  .banner{height:110px;background:linear-gradient(135deg,var(--li-blue) 0%,var(--li-blue-dark) 100%);}
+  .profile-head{padding:0 24px 24px;position:relative;}
+  .avatar{width:120px;height:120px;border-radius:50%;border:4px solid #fff;margin-top:-60px;background:var(--li-bg);display:block;object-fit:cover;}
+  .name{font-size:22px;font-weight:700;margin-top:12px;}
+  .headline{font-size:14.5px;color:var(--li-text);margin-top:4px;}
+  .location{font-size:12.5px;color:var(--li-muted);margin-top:4px;}
+  .contact-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+  .btn{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:16px;font-size:12.5px;font-weight:600;cursor:pointer;border:none;text-decoration:none;}
+  .btn-primary{background:var(--li-blue);color:#fff;}
+  .btn-wa{background:var(--li-wa);color:#fff;}
+  .btn-ghost{background:#fff;color:var(--li-text);border:1.5px solid var(--li-muted);}
+  .section-title{font-size:17px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+  .section-title::before{content:'';width:3px;height:16px;background:var(--li-blue);border-radius:2px;}
+  .exp-item{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--li-border);}
+  .exp-item:last-child{border-bottom:none;}
+  .exp-logo{width:44px;height:44px;border-radius:6px;background:var(--li-bg);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--li-blue);border:1px solid var(--li-border);flex-shrink:0;}
+  .exp-body{flex:1;}
+  .exp-role{font-size:14.5px;font-weight:600;}
+  .exp-company{font-size:13px;color:var(--li-text);}
+  .exp-meta{font-size:12px;color:var(--li-muted);}
+  .exp-desc{list-style:none;margin-top:6px;font-size:12.5px;}
+  .exp-desc li{margin-bottom:3px;padding-left:14px;position:relative;}
+  .exp-desc li::before{content:'▸';position:absolute;left:0;color:var(--li-blue);}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;}
+  .tag{background:#EAF3FC;color:var(--li-blue-dark);padding:4px 10px;border-radius:12px;font-size:12px;font-weight:500;}
+  .tag-alt{background:#F3F2EF;color:var(--li-text);}
+  .skill-row{margin-bottom:10px;}
+  .skill-row .lbl{display:flex;justify-content:space-between;font-size:12.5px;font-weight:500;margin-bottom:4px;}
+  .bar{height:5px;background:#E0E0E0;border-radius:3px;overflow:hidden;}
+  .bar-fill{height:100%;background:var(--li-blue);}
+  .cta-final{background:linear-gradient(135deg, #0A66C2 0%, #004182 100%);color:#fff;border-radius:10px;padding:24px;text-align:center;margin:16px 0;}
+  .cta-buttons{display:flex;gap:10px;justify-content:center;margin-top:12px;}
+  .cta-btn{padding:9px 18px;border-radius:20px;font-size:13px;font-weight:700;text-decoration:none;}
+  .cta-btn.wa{background:#25D366;color:#fff;}
+  .cta-btn.mail{background:#fff;color:var(--li-blue-dark);}
+  @media print{.topbar,.cta-final{display:none !important;}body{background:#fff;}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="logo-li"><span>in</span>Portafolio</div>
+    <button class="btn-sm download" onclick="window.print()">📥 Descargar PDF</button>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="card">
+    <div class="banner"></div>
+    <div class="profile-head">
+      <img class="avatar" src="https://i.postimg.cc/J4ySVWkS/Screenshot-20260523-151443-Gallery.jpg" alt="Juan Carlos Pérez Martínez">
+      <h1 class="name">Juan Carlos Pérez Martínez</h1>
+      <div class="headline">
+        <strong>Coordinación de Operaciones E-commerce & Canales Digitales</strong> · 
+        Gestión de Marketplace (Amazon, Mercado Libre) · Control de Calidad & Catálogos
+      </div>
+      <div class="location">📍 Querétaro, México (Cercanía a El Marqués / Zibatá) · Presencial</div>
+
+      <div class="contact-row">
+        <a href="mailto:anibalstringlo@gmail.com?subject=Postulaci%C3%B3n%20Coordinador%20de%20Operaciones%20E-commerce%20-%20Juan%20Carlos%20P%C3%A9rez" class="btn btn-primary">✉️ Enviar correo</a>
+        <a href="https://wa.me/524464044521?text=Hola,%20env%C3%ADo%20mi%20perfil%20para%20la%20vacante%20de%20Coordinador%20de%20Operaciones%20E-commerce." target="_blank" class="btn btn-wa">💬 WhatsApp Directo</a>
+        <a href="tel:524464044521" class="btn btn-ghost">📞 446 404 45 21</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-pad">
+    <h2 class="section-title">Perfil Profesional</h2>
+    <p>
+      Estratega operativo y digital especializado en <strong>gestión de catálogos e-commerce, estandarización de contenido y coordinación de canales de venta</strong>. Combino la lógica estructurada de desarrollo y bases de datos con el criterio estético de la Licenciatura en Artes Visuales para supervisar publicaciones de alta calidad en plataformas (Amazon, Mercado Libre, e-commerce propio). Hábil en el trabajo por procesos (*checklists*), control de calidad visual y comunicación efectiva con equipos de diseño y distribuidores.
+    </p>
+  </div>
+
+  <div class="card card-pad">
+    <h2 class="section-title">Experiencia Relevante en Operaciones & Digital</h2>
+
+    <div class="exp-item">
+      <div class="exp-logo">EC</div>
+      <div class="exp-body">
+        <div class="exp-role">Coordinador de Proyectos Digitales & Operaciones E-commerce</div>
+        <div class="exp-company">Estrategias y Soluciones Digitales — Querétaro</div>
+        <div class="exp-meta">2022 – Presente</div>
+        <ul class="exp-desc">
+          <li>Supervisión y carga de catálogos de productos en plataformas digitales y Landing Pages (Google Sites, CMS web).</li>
+          <li>Aseguramiento de control de calidad: validación de imágenes adecuadas, títulos optimizados, descripciones y atributos completados según manual de marca.</li>
+          <li>Gestión de flujos de trabajo en equipo mediante herramientas de seguimiento de proyectos (Asana, Google Sheets).</li>
+          <li>Coordinación directa con proveedores e inventarios para asegurar cumplimiento de tiempos de lanzamiento.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-logo">FC</div>
+      <div class="exp-body">
+        <div class="exp-role">Gerente Operativo de Tienda & Administración de Inventarios</div>
+        <div class="exp-company">Fashion Celular — Querétaro</div>
+        <div class="exp-meta">1995 – 2014</div>
+        <ul class="exp-desc">
+          <li>Control administrativo de inventarios, recepción de mercancía y gestión de catálogos de productos técnicos.</li>
+          <li>Atención a solicitudes de distribuidores, facturación, precios y control de estándares de servicio.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-pad">
+    <h2 class="section-title">Dominio Técnico & Herramientas</h2>
+    <div class="skill-row">
+      <div class="lbl"><span>Google Sheets / Excel Avanzado (Tablas, Fórmulas, Control)</span><span>90%</span></div>
+      <div class="bar"><div class="bar-fill" style="width:90%"></div></div>
+    </div>
+    <div class="skill-row">
+      <div class="lbl"><span>Gestión de Proyectos & Tareas (Asana, Checklists)</span><span>88%</span></div>
+      <div class="bar"><div class="bar-fill" style="width:88%"></div></div>
+    </div>
+    <div class="skill-row">
+      <div class="lbl"><span>Estandarización de Contenido & Branding E-commerce</span><span>92%</span></div>
+      <div class="bar"><div class="bar-fill" style="width:92%"></div></div>
+    </div>
+
+    <div style="margin-top:14px;">
+      <div class="tags">
+        <span class="tag">Google Sheets / Excel</span>
+        <span class="tag">Asana</span>
+        <span class="tag">Google Drive</span>
+        <span class="tag">Publicación en Marketplaces</span>
+        <span class="tag">Nociones de Odoo ERP</span>
+        <span class="tag">Checklists de Calidad</span>
+        <span class="tag tag-alt">Atención a Distribuidores</span>
+        <span class="tag tag-alt">Organización de Archivos</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-pad">
+    <h2 class="section-title">Formación Académica</h2>
+    <div class="exp-item">
+      <div class="exp-logo">🎨</div>
+      <div class="exp-body">
+        <div class="exp-role">Licenciatura en Artes Visuales</div>
+        <div class="exp-company">Universidad de las Artes — Aguascalientes</div>
+        <div class="exp-meta">Criterio estético, composición gráfica y tratamiento de imagen profesional.</div>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-logo">💻</div>
+      <div class="exp-body">
+        <div class="exp-role">Bootcamp Fullstack Developer</div>
+        <div class="exp-company">Funval International</div>
+        <div class="exp-meta">Estructuración de datos, manejo de plataformas web y metodologías ágiles.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-final">
+    <h3>¿Interesados en revisar mi perfil?</h3>
+    <p>Disponibilidad inmediata para coordinar operaciones de e-commerce en Terrapark Centenario.</p>
+    <div class="cta-buttons">
+      <a href="mailto:anibalstringlo@gmail.com?subject=Postulaci%C3%B3n%20Coordinador%20de%20Operaciones%20E-commerce%20-%20Juan%20Carlos%20P%C3%A9rez" class="cta-btn mail">✉️ Enviar correo al reclutador</a>
+      <a href="https://wa.me/524464044521?text=Hola,%20env%C3%ADo%20mi%20perfil%20para%20la%20vacante%20de%20Coordinador%20de%20Operaciones%20E-commerce." target="_blank" class="cta-btn wa">💬 WhatsApp</a>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
