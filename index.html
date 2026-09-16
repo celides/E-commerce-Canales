@@ -3,121 +3,585 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Juan Carlos Pérez Martínez — Coordinación de Operaciones E-commerce & Canales</title>
+<title>Juan Carlos Pérez Martínez — Coordinador de Operaciones E-commerce y Canales</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --li-blue:#0A66C2;
-    --li-blue-dark:#004182;
-    --li-bg:#F3F2EF;
-    --li-card:#FFFFFF;
-    --li-text:#191919;
-    --li-muted:#666666;
-    --li-border:#E0E0E0;
-    --li-green:#057642;
-    --li-wa:#25D366;
+    --ec-primary:#0f4c81;
+    --ec-primary-dark:#0a3659;
+    --ec-accent:#00a8a8;
+    --ec-accent-dark:#008080;
+    --ec-bg:#f4f6f9;
+    --ec-card:#ffffff;
+    --ec-text:#1a1a1a;
+    --ec-muted:#5c6370;
+    --ec-border:#e2e6eb;
+    --ec-green:#0e7c4a;
+    --ec-wa:#25D366;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
-  body{font-family:'Inter',sans-serif;background:var(--li-bg);color:var(--li-text);font-size:14px;line-height:1.6;}
-  a{color:var(--li-blue);text-decoration:none;}
-  .topbar{background:#fff;border-bottom:1px solid var(--li-border);position:sticky;top:0;z-index:100;padding:8px 0;}
-  .topbar-inner{max-width:900px;margin:0 auto;padding:0 16px;display:flex;align-items:center;justify-content:space-between;}
-  .logo-li{font-weight:800;font-size:18px;color:var(--li-blue);}
-  .logo-li span{background:var(--li-blue);color:#fff;padding:1px 6px;border-radius:3px;margin-right:4px;}
-  .btn-sm{background:#fff;color:var(--li-blue);border:1.5px solid var(--li-blue);padding:6px 12px;border-radius:16px;font-size:12px;font-weight:600;cursor:pointer;}
-  .btn-sm.download{background:var(--li-green);color:#fff;border-color:var(--li-green);}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:var(--ec-bg);
+    color:var(--ec-text);
+    font-size:14px;
+    line-height:1.6;
+  }
+  a{color:var(--ec-primary);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  /* TOPBAR */
+  .topbar{
+    background:#fff;
+    border-bottom:1px solid var(--ec-border);
+    position:sticky;top:0;z-index:100;
+    padding:8px 0;
+  }
+  .topbar-inner{
+    max-width:900px;margin:0 auto;padding:0 16px;
+    display:flex;align-items:center;justify-content:space-between;
+    gap:10px;flex-wrap:wrap;
+  }
+  .logo-ec{
+    font-weight:800;font-size:17px;color:var(--ec-primary);
+    display:flex;align-items:center;gap:8px;
+  }
+  .logo-ec .badge{
+    background:var(--ec-primary);color:#fff;
+    padding:2px 9px;border-radius:3px;font-size:12px;
+    font-weight:700;letter-spacing:.5px;
+  }
+  .topbar-actions{display:flex;gap:6px;flex-wrap:wrap;}
+
+  .btn-sm{
+    background:#fff;color:var(--ec-primary);
+    border:1.5px solid var(--ec-primary);
+    padding:6px 12px;border-radius:16px;
+    font-family:inherit;font-weight:600;font-size:12px;
+    cursor:pointer;display:inline-flex;align-items:center;gap:4px;
+    transition:all .15s;text-decoration:none;
+  }
+  .btn-sm:hover{background:var(--ec-primary);color:#fff;text-decoration:none;}
+  .btn-sm.primary{background:var(--ec-primary);color:#fff;}
+  .btn-sm.primary:hover{background:var(--ec-primary-dark);}
+  .btn-sm.download{background:var(--ec-green);color:#fff;border-color:var(--ec-green);}
+  .btn-sm.download:hover{background:#0a5c37;border-color:#0a5c37;}
+
+  .visited{
+    background:var(--ec-primary) !important;
+    color:#fff !important;
+    border-color:var(--ec-primary) !important;
+  }
+  .visited:hover{
+    background:var(--ec-primary-dark) !important;
+    border-color:var(--ec-primary-dark) !important;
+  }
+  .btn.visited,.btn-sm.visited,.cta-btn.visited{
+    background:var(--ec-primary) !important;
+    color:#fff !important;
+    border-color:var(--ec-primary) !important;
+  }
+
   .container{max-width:900px;margin:0 auto;padding:16px;}
-  .card{background:var(--li-card);border:1px solid var(--li-border);border-radius:10px;margin-bottom:12px;overflow:hidden;}
+
+  .card{
+    background:var(--ec-card);
+    border:1px solid var(--ec-border);
+    border-radius:10px;
+    margin-bottom:12px;
+    overflow:hidden;
+  }
   .card-pad{padding:24px;}
-  .banner{height:110px;background:linear-gradient(135deg,var(--li-blue) 0%,var(--li-blue-dark) 100%);}
+
+  /* BANNER */
+  .banner{
+    height:130px;
+    background:linear-gradient(135deg,var(--ec-primary) 0%,var(--ec-primary-dark) 100%);
+    position:relative;
+  }
+  .banner::after{
+    content:'';position:absolute;inset:0;
+    background:
+      radial-gradient(circle at 85% 20%, rgba(0,168,168,.35) 0%, transparent 55%),
+      radial-gradient(circle at 10% 80%, rgba(255,255,255,.06) 0%, transparent 60%);
+  }
+  .banner::before{
+    content:'';position:absolute;
+    top:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg, var(--ec-accent) 0%, var(--ec-accent-dark) 100%);
+  }
+
   .profile-head{padding:0 24px 24px;position:relative;}
-  .avatar{width:120px;height:120px;border-radius:50%;border:4px solid #fff;margin-top:-60px;background:var(--li-bg);display:block;object-fit:cover;}
-  .name{font-size:22px;font-weight:700;margin-top:12px;}
-  .headline{font-size:14.5px;color:var(--li-text);margin-top:4px;}
-  .location{font-size:12.5px;color:var(--li-muted);margin-top:4px;}
-  .contact-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
-  .btn{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:16px;font-size:12.5px;font-weight:600;cursor:pointer;border:none;text-decoration:none;}
-  .btn-primary{background:var(--li-blue);color:#fff;}
-  .btn-wa{background:var(--li-wa);color:#fff;}
-  .btn-ghost{background:#fff;color:var(--li-text);border:1.5px solid var(--li-muted);}
-  .section-title{font-size:17px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
-  .section-title::before{content:'';width:3px;height:16px;background:var(--li-blue);border-radius:2px;}
-  .exp-item{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--li-border);}
+  .avatar-wrap{
+    width:140px;height:140px;
+    border-radius:50%;
+    border:4px solid #fff;
+    margin-top:-75px;
+    background:var(--ec-bg);
+    display:block;
+    overflow:hidden;
+    position:relative;
+    box-shadow:0 4px 14px rgba(0,0,0,.12);
+  }
+  .avatar-wrap img{
+    width:100%;height:100%;
+    object-fit:cover;
+    object-position:center 25%;
+    display:block;
+    transform:scale(1.35);
+    transform-origin:center 30%;
+  }
+  .name{font-size:26px;font-weight:700;margin-top:14px;line-height:1.2;color:var(--ec-primary);}
+  .headline{
+    font-size:15px;margin-top:6px;font-weight:500;
+    color:var(--ec-text);
+    padding-bottom:8px;
+    border-bottom:1px solid var(--ec-border);
+  }
+  .headline strong{color:var(--ec-primary);}
+  .location{font-size:13px;color:var(--ec-muted);margin-top:8px;}
+  .availability-pill{
+    display:inline-block;
+    background:#E8F5EE;
+    color:var(--ec-green);
+    border:1px solid #b8e0c9;
+    padding:4px 12px;
+    border-radius:14px;
+    font-size:12px;
+    font-weight:600;
+    margin-top:10px;
+  }
+
+  .contact-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:6px;
+    padding:8px 18px;border-radius:18px;
+    font-size:13px;font-weight:600;cursor:pointer;
+    border:none;font-family:inherit;text-decoration:none;
+    transition:all .15s;
+  }
+  .btn-primary{background:var(--ec-primary);color:#fff;}
+  .btn-primary:hover{background:var(--ec-primary-dark);text-decoration:none;color:#fff;}
+  .btn-outline{background:#fff;color:var(--ec-primary);border:1.5px solid var(--ec-primary);}
+  .btn-outline:hover{background:#EAF1F8;text-decoration:none;}
+  .btn-ghost{background:#fff;color:var(--ec-text);border:1.5px solid var(--ec-muted);}
+  .btn-ghost:hover{background:#f4f6f9;text-decoration:none;}
+  .btn-wa{background:var(--ec-wa);color:#fff;}
+  .btn-wa:hover{background:#1ebe5b;color:#fff;text-decoration:none;}
+
+  .section-title{
+    font-size:17px;font-weight:700;margin-bottom:16px;
+    color:var(--ec-primary);
+    display:flex;align-items:center;gap:10px;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+  }
+  .section-title::before{
+    content:'';width:4px;height:18px;
+    background:var(--ec-accent);border-radius:2px;
+  }
+
+  /* EXPERIENCIA */
+  .exp-item{
+    display:flex;gap:14px;padding:16px 0;
+    border-bottom:1px solid var(--ec-border);
+  }
   .exp-item:last-child{border-bottom:none;}
-  .exp-logo{width:44px;height:44px;border-radius:6px;background:var(--li-bg);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--li-blue);border:1px solid var(--li-border);flex-shrink:0;}
+  .exp-logo{
+    width:50px;height:50px;border-radius:8px;
+    background:var(--ec-primary);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;color:#fff;
+    font-size:15px;flex-shrink:0;
+    border:1px solid var(--ec-primary-dark);
+  }
   .exp-body{flex:1;}
-  .exp-role{font-size:14.5px;font-weight:600;}
-  .exp-company{font-size:13px;color:var(--li-text);}
-  .exp-meta{font-size:12px;color:var(--li-muted);}
-  .exp-desc{list-style:none;margin-top:6px;font-size:12.5px;}
-  .exp-desc li{margin-bottom:3px;padding-left:14px;position:relative;}
-  .exp-desc li::before{content:'▸';position:absolute;left:0;color:var(--li-blue);}
+  .exp-role{font-size:15.5px;font-weight:700;color:var(--ec-text);}
+  .exp-company{font-size:13.5px;margin-top:2px;color:var(--ec-primary);font-weight:600;}
+  .exp-meta{font-size:12.5px;color:var(--ec-muted);margin-top:2px;}
+  .exp-desc{list-style:none;margin-top:10px;font-size:13.5px;}
+  .exp-desc li{margin-bottom:5px;padding-left:16px;position:relative;line-height:1.55;}
+  .exp-desc li::before{content:'▸';position:absolute;left:0;color:var(--ec-accent-dark);font-weight:700;}
+  .exp-desc li.highlight{
+    background:#e8f6f6;
+    border-left:3px solid var(--ec-accent);
+    padding:10px 12px 10px 26px;
+    border-radius:0 6px 6px 0;
+    margin-top:8px;
+  }
+  .exp-desc li.highlight::before{content:'★';left:8px;color:var(--ec-accent-dark);}
+
+  /* SKILLS */
   .tags{display:flex;flex-wrap:wrap;gap:6px;}
-  .tag{background:#EAF3FC;color:var(--li-blue-dark);padding:4px 10px;border-radius:12px;font-size:12px;font-weight:500;}
-  .tag-alt{background:#F3F2EF;color:var(--li-text);}
-  .skill-row{margin-bottom:10px;}
-  .skill-row .lbl{display:flex;justify-content:space-between;font-size:12.5px;font-weight:500;margin-bottom:4px;}
-  .bar{height:5px;background:#E0E0E0;border-radius:3px;overflow:hidden;}
-  .bar-fill{height:100%;background:var(--li-blue);}
-  .cta-final{background:linear-gradient(135deg, #0A66C2 0%, #004182 100%);color:#fff;border-radius:10px;padding:24px;text-align:center;margin:16px 0;}
-  .cta-buttons{display:flex;gap:10px;justify-content:center;margin-top:12px;}
-  .cta-btn{padding:9px 18px;border-radius:20px;font-size:13px;font-weight:700;text-decoration:none;}
+  .tag{
+    background:#EAF1F8;color:var(--ec-primary);
+    padding:6px 14px;border-radius:14px;
+    font-size:12.5px;font-weight:600;
+  }
+  .tag-alt{background:#f4f6f9;color:var(--ec-text);font-weight:500;}
+  .tag-accent{background:#e8f6f6;color:var(--ec-accent-dark);}
+
+  /* HERRAMIENTAS GRID */
+  .tools-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+    gap:10px;
+    margin-top:6px;
+  }
+  .tool-card{
+    background:#f8fafc;
+    border:1px solid var(--ec-border);
+    border-radius:8px;
+    padding:12px 14px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    transition:all .15s;
+  }
+  .tool-card:hover{
+    border-color:var(--ec-accent);
+    background:#fff;
+  }
+  .tool-card .t-ico{
+    width:32px;height:32px;
+    background:var(--ec-primary);
+    color:#fff;
+    border-radius:6px;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:13px;
+    flex-shrink:0;
+  }
+  .tool-card .t-info{flex:1;min-width:0;}
+  .tool-card .t-name{
+    font-size:13px;font-weight:600;color:var(--ec-text);
+    line-height:1.2;
+  }
+  .tool-card .t-level{
+    font-size:11px;color:var(--ec-muted);margin-top:1px;
+  }
+
+  /* EDUCACIÓN */
+  .edu-item{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--ec-border);}
+  .edu-item:last-child{border-bottom:none;}
+  .edu-icon{
+    width:50px;height:50px;border-radius:8px;
+    background:#EAF1F8;color:var(--ec-primary);
+    display:flex;align-items:center;justify-content:center;
+    font-size:22px;flex-shrink:0;
+  }
+  .edu-role{font-size:15px;font-weight:700;color:var(--ec-text);}
+  .edu-inst{font-size:13.5px;margin-top:2px;color:var(--ec-primary);font-weight:500;}
+  .edu-meta{font-size:12.5px;color:var(--ec-muted);margin-top:3px;}
+
+  /* CERT LIST */
+  .cert-list{list-style:none;}
+  .cert-list li{
+    font-size:13.5px;padding:9px 0 9px 24px;
+    position:relative;border-bottom:1px dashed var(--ec-border);
+  }
+  .cert-list li:last-child{border-bottom:none;}
+  .cert-list li::before{content:'✓';position:absolute;left:0;color:var(--ec-accent-dark);font-weight:800;}
+
+  /* CTA */
+  .cta-final{
+    background:linear-gradient(135deg, var(--ec-primary) 0%, var(--ec-primary-dark) 100%);
+    color:#fff;
+    border-radius:12px;
+    padding:32px 28px;
+    text-align:center;
+    margin:20px 0;
+    position:relative;
+    overflow:hidden;
+    border-top:3px solid var(--ec-accent);
+  }
+  .cta-final::before{
+    content:'';position:absolute;top:-60px;right:-60px;
+    width:220px;height:220px;
+    background:radial-gradient(circle, rgba(0,168,168,.25) 0%, transparent 70%);
+    border-radius:50%;
+  }
+  .cta-final h3{
+    font-size:22px;font-weight:700;
+    margin-bottom:8px;position:relative;z-index:1;color:#fff;
+  }
+  .cta-final h3 span{color:var(--ec-accent);}
+  .cta-final .cta-sub{
+    font-size:13.5px;opacity:.92;margin-bottom:8px;
+    position:relative;z-index:1;
+  }
+  .cta-final .cta-horario{
+    display:inline-block;
+    background:rgba(0,168,168,.18);
+    border:1px solid rgba(0,168,168,.4);
+    padding:6px 16px;border-radius:14px;
+    font-size:12.5px;font-weight:600;
+    margin:10px 0 20px;
+    color:var(--ec-accent);
+    position:relative;z-index:1;
+  }
+  .cta-buttons{
+    display:flex;flex-wrap:wrap;gap:10px;
+    justify-content:center;position:relative;z-index:1;
+  }
+  .cta-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 24px;border-radius:24px;
+    font-size:14px;font-weight:700;
+    cursor:pointer;border:none;font-family:inherit;
+    text-decoration:none;
+    transition:transform .15s,box-shadow .15s;
+  }
+  .cta-btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.3);text-decoration:none;}
   .cta-btn.wa{background:#25D366;color:#fff;}
-  .cta-btn.mail{background:#fff;color:var(--li-blue-dark);}
-  @media print{.topbar,.cta-final{display:none !important;}body{background:#fff;}}
+  .cta-btn.mail{background:var(--ec-accent);color:#fff;}
+
+  .footer{
+    text-align:center;padding:24px 16px 30px;
+    font-size:12px;color:var(--ec-muted);
+  }
+  .footer .version{
+    display:inline-block;background:#EAF1F8;
+    color:var(--ec-primary);padding:3px 10px;
+    border-radius:10px;font-size:11px;font-weight:600;
+    margin-top:8px;letter-spacing:.4px;
+  }
+
+  .wa-float{
+    position:fixed;bottom:24px;right:24px;
+    width:56px;height:56px;background:var(--ec-wa);
+    border-radius:50%;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 18px rgba(0,0,0,.25);z-index:9999;
+    transition:transform .2s;
+  }
+  .wa-float:hover{transform:scale(1.08);text-decoration:none;}
+  .wa-float svg{width:30px;height:30px;fill:#fff;}
+
+  /* MATCH BOX — para mostrar encaje con la vacante */
+  .match-box{
+    background:linear-gradient(135deg,#f0f9f9 0%,#e8f6f6 100%);
+    border:1px solid #c5e5e5;
+    border-left:4px solid var(--ec-accent);
+    border-radius:8px;
+    padding:16px 20px;
+    margin-bottom:16px;
+  }
+  .match-box h3{
+    font-size:14px;font-weight:700;
+    color:var(--ec-accent-dark);
+    text-transform:uppercase;
+    letter-spacing:.5px;
+    margin-bottom:10px;
+  }
+  .match-box ul{list-style:none;font-size:13px;}
+  .match-box li{
+    padding:4px 0 4px 22px;
+    position:relative;
+    line-height:1.5;
+  }
+  .match-box li::before{
+    content:'✓';
+    position:absolute;left:0;
+    color:var(--ec-green);font-weight:800;
+  }
+  .match-box strong{color:var(--ec-primary);}
+
+  @media (max-width:640px){
+    .container{padding:8px;}
+    .card-pad{padding:18px;}
+    .profile-head{padding:0 18px 18px;}
+    .avatar-wrap{width:115px;height:115px;margin-top:-62px;}
+    .name{font-size:21px;}
+    .headline{font-size:13.5px;}
+    .banner{height:100px;}
+    .btn-sm{font-size:11px;padding:5px 10px;}
+    .cta-final{padding:24px 18px;}
+    .cta-final h3{font-size:18px;}
+    .section-title{font-size:15px;}
+    .tools-grid{grid-template-columns:1fr;}
+  }
+
+  @media print{
+    .topbar,.wa-float{display:none !important;}
+    body{background:#fff;font-size:12px;}
+    .card{box-shadow:none;border:1px solid #ccc;page-break-inside:avoid;}
+    .banner{
+      background:var(--ec-primary) !important;
+      -webkit-print-color-adjust:exact;
+      print-color-adjust:exact;
+      height:70px;
+    }
+    .cta-final{display:none !important;}
+    .btn,.btn-sm{display:none !important;}
+    a{color:var(--ec-text);}
+  }
 </style>
 </head>
 <body>
 
+<!-- TOPBAR -->
 <div class="topbar">
   <div class="topbar-inner">
-    <div class="logo-li"><span>in</span>Portafolio</div>
-    <button class="btn-sm download" onclick="window.print()">📥 Descargar PDF</button>
+    <div class="logo-ec"><span class="badge">CV</span>Juan Carlos Pérez Martínez</div>
+    <div class="topbar-actions">
+      <button class="btn-sm download" onclick="window.print()">📥 Descargar PDF</button>
+    </div>
   </div>
 </div>
 
 <div class="container">
 
+  <!-- PERFIL -->
   <div class="card">
     <div class="banner"></div>
     <div class="profile-head">
-      <img class="avatar" src="https://i.postimg.cc/J4ySVWkS/Screenshot-20260523-151443-Gallery.jpg" alt="Juan Carlos Pérez Martínez">
+      <div class="avatar-wrap">
+        <img src="https://i.postimg.cc/J4ySVWkS/Screenshot-20260523-151443-Gallery.jpg"
+             alt="Juan Carlos Pérez Martínez"
+             onerror="this.parentElement.innerHTML='<div style=&quot;width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:800;color:var(--ec-primary)&quot;>JC</div>'">
+      </div>
+
       <h1 class="name">Juan Carlos Pérez Martínez</h1>
       <div class="headline">
-        <strong>Coordinación de Operaciones E-commerce & Canales Digitales</strong> · 
-        Gestión de Marketplace (Amazon, Mercado Libre) · Control de Calidad & Catálogos
+        <strong>Coordinador de Operaciones E-commerce y Canales</strong> ·
+        Gestión de proyectos · Catálogo digital · Coordinación con distribuidores
       </div>
-      <div class="location">📍 Querétaro, México (Cercanía a El Marqués / Zibatá) · Presencial</div>
+      <div class="location">
+        📍 Querétaro, Qro. · Disponibilidad presencial · Zona Zibata / Zakia
+      </div>
+      <div class="availability-pill">
+        ✅ Ingreso inmediato · Licenciatura terminada
+      </div>
 
       <div class="contact-row">
-        <a href="mailto:anibalstringlo@gmail.com?subject=Postulaci%C3%B3n%20Coordinador%20de%20Operaciones%20E-commerce%20-%20Juan%20Carlos%20P%C3%A9rez" class="btn btn-primary">✉️ Enviar correo</a>
-        <a href="https://wa.me/524464044521?text=Hola,%20env%C3%ADo%20mi%20perfil%20para%20la%20vacante%20de%20Coordinador%20de%20Operaciones%20E-commerce." target="_blank" class="btn btn-wa">💬 WhatsApp Directo</a>
-        <a href="tel:524464044521" class="btn btn-ghost">📞 446 404 45 21</a>
+        <a href="tel:524464044521" class="btn btn-primary" data-visited="tel">📞 446 404 45 21</a>
+        <a href="https://wa.me/524464044521?text=Hola%20Juan%20Carlos,%20vimos%20tu%20perfil%20para%20la%20vacante%20de%20Coordinador%20E-commerce." target="_blank" rel="noopener" class="btn btn-wa" data-visited="wa">💬 WhatsApp</a>
+        <a href="mailto:celides10@gmail.com" class="btn btn-outline" data-visited="mail">✉️ Correo</a>
       </div>
     </div>
   </div>
 
+  <!-- MATCH CON LA VACANTE -->
+  <div class="card card-pad">
+    <div class="match-box">
+      <h3>🎯 Por qué encajo en esta vacante</h3>
+      <ul>
+        <li><strong>Gestión de proyectos y coordinación:</strong> 5+ años liderando iniciativas comerciales y operativas, con seguimiento puntual hasta cierre.</li>
+        <li><strong>Organización de información y catálogos:</strong> experiencia estructurando datos de producto, precios y contenidos para distintos canales.</li>
+        <li><strong>Coordinación con distribuidores y equipos:</strong> trabajo constante con proveedores, áreas de diseño y equipos multidisciplinarios.</li>
+        <li><strong>Perfil analítico + técnico:</strong> licenciatura terminada, bootcamp Fullstack, uso avanzado de Google Sheets/Excel y familiaridad con ERPs.</li>
+        <li><strong>Disponibilidad:</strong> vivo en zona cercana (Zibata/Zakia), horario L-V 9-6 compatible.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PERFIL PROFESIONAL -->
   <div class="card card-pad">
     <h2 class="section-title">Perfil Profesional</h2>
-    <p>
-      Estratega operativo y digital especializado en <strong>gestión de catálogos e-commerce, estandarización de contenido y coordinación de canales de venta</strong>. Combino la lógica estructurada de desarrollo y bases de datos con el criterio estético de la Licenciatura en Artes Visuales para supervisar publicaciones de alta calidad en plataformas (Amazon, Mercado Libre, e-commerce propio). Hábil en el trabajo por procesos (*checklists*), control de calidad visual y comunicación efectiva con equipos de diseño y distribuidores.
+    <p style="font-size:14px;line-height:1.75;">
+      Coordinador con más de <strong>5 años de experiencia en gestión de proyectos comerciales y operativos</strong>,
+      con foco en <strong>organización de información, seguimiento puntual y cumplimiento de tiempos</strong>.
+      Perfil híbrido <strong>técnico + comercial</strong>: combino la disciplina de un desarrollador Fullstack
+      (estructura, procesos, datos) con la ejecución de un ejecutivo de ventas (comunicación, negociación,
+      coordinación con clientes y proveedores). Experiencia trabajando con <strong>checklists, procesos
+      estructurados y coordinación entre áreas</strong> (diseño, catálogo, plataformas).
     </p>
   </div>
 
+  <!-- HERRAMIENTAS -->
   <div class="card card-pad">
-    <h2 class="section-title">Experiencia Relevante en Operaciones & Digital</h2>
+    <h2 class="section-title">Herramientas y Plataformas</h2>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <div class="t-ico">Odoo</div>
+        <div class="t-info">
+          <div class="t-name">Odoo ERP</div>
+          <div class="t-level">Familiaridad · aprendizaje activo</div>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="t-ico">A</div>
+        <div class="t-info">
+          <div class="t-name">Asana</div>
+          <div class="t-level">Gestión de tareas y proyectos</div>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="t-ico">📊</div>
+        <div class="t-info">
+          <div class="t-name">Google Sheets / Excel</div>
+          <div class="t-level">Nivel avanzado · catálogos y control</div>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="t-ico">📁</div>
+        <div class="t-info">
+          <div class="t-name">Google Drive</div>
+          <div class="t-level">Organización documental</div>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="t-ico">🛒</div>
+        <div class="t-info">
+          <div class="t-name">Amazon / Mercado Libre</div>
+          <div class="t-level">Conocimiento de plataformas</div>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="t-ico">💻</div>
+        <div class="t-info">
+          <div class="t-name">Herramientas IA</div>
+          <div class="t-level">ChatGPT, Claude, Gemini</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPERIENCIA -->
+  <div class="card card-pad">
+    <h2 class="section-title">Experiencia Profesional</h2>
 
     <div class="exp-item">
-      <div class="exp-logo">EC</div>
+      <div class="exp-logo" style="background:#E30613;border-color:#b60510;">M</div>
       <div class="exp-body">
-        <div class="exp-role">Coordinador de Proyectos Digitales & Operaciones E-commerce</div>
-        <div class="exp-company">Estrategias y Soluciones Digitales — Querétaro</div>
-        <div class="exp-meta">2022 – Presente</div>
+        <div class="exp-role">Asesor de Ventas · Coordinación de Servicios</div>
+        <div class="exp-company">Megacable</div>
+        <div class="exp-meta">Querétaro, Qro. · 2025 – 2026</div>
         <ul class="exp-desc">
-          <li>Supervisión y carga de catálogos de productos en plataformas digitales y Landing Pages (Google Sites, CMS web).</li>
-          <li>Aseguramiento de control de calidad: validación de imágenes adecuadas, títulos optimizados, descripciones y atributos completados según manual de marca.</li>
-          <li>Gestión de flujos de trabajo en equipo mediante herramientas de seguimiento de proyectos (Asana, Google Sheets).</li>
-          <li>Coordinación directa con proveedores e inventarios para asegurar cumplimiento de tiempos de lanzamiento.</li>
+          <li><strong>Coordinación de proyectos de implementación</strong> de servicios (internet, telefonía, TV) para clientes residenciales y PyMEs, asegurando cumplimiento de tiempos de activación.</li>
+          <li><strong>Seguimiento puntual a pendientes</strong> por cliente: documentación, agenda técnica, verificación post-instalación.</li>
+          <li>Uso de <strong>checklists y procesos estructurados</strong> para validar que cada servicio se entregue completo y con calidad.</li>
+          <li>Comunicación constante con <strong>distribuidores, áreas técnicas y clientes</strong> para asegurar alineación de entregables.</li>
+          <li class="highlight"><strong>Logro destacado:</strong> identifiqué cuellos de botella en prospección, implementé campañas en Meta Business Suite con inversión propia y <strong>escalé de 4-12 a 15-16 contratos semanales</strong>, optimizando el flujo operativo.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-logo">CS</div>
+      <div class="exp-body">
+        <div class="exp-role">Consultor Comercial Senior · Coordinación B2B</div>
+        <div class="exp-company">Estrategias de Conectividad y Soluciones Digitales</div>
+        <div class="exp-meta">Querétaro, Qro. · 2022 – 2025</div>
+        <ul class="exp-desc">
+          <li><strong>Gestión de proyectos B2B</strong>: coordinación de implementaciones de infraestructura y soluciones digitales con clientes corporativos.</li>
+          <li><strong>Diseño de embudos y procesos</strong> de prospección B2B/B2C con herramientas digitales (Meta Ads, IA, CRM).</li>
+          <li>Coordinación con <strong>múltiples áreas internas y proveedores externos</strong> para asegurar cumplimiento de entregables.</li>
+          <li>Reporte de avances a tomadores de decisión (directores, gerentes, CTOs) de forma <strong>clara y estructurada</strong>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-logo">IEA</div>
+      <div class="exp-body">
+        <div class="exp-role">Maestro de Bachillerato · Coordinación Académica</div>
+        <div class="exp-company">Instituto de Educación de Aguascalientes (I.E.A.)</div>
+        <div class="exp-meta">Aguascalientes · jun 2020 – dic 2022</div>
+        <ul class="exp-desc">
+          <li>Coordinación de grupos y planeación de actividades con <strong>entregables calendarizados</strong>.</li>
+          <li><strong>Organización de información</strong> académica y reportes estructurados.</li>
+          <li>Comunicación clara, seguimiento puntual y trabajo con metodologías por competencias.</li>
         </ul>
       </div>
     </div>
@@ -125,76 +589,194 @@
     <div class="exp-item">
       <div class="exp-logo">FC</div>
       <div class="exp-body">
-        <div class="exp-role">Gerente Operativo de Tienda & Administración de Inventarios</div>
-        <div class="exp-company">Fashion Celular — Querétaro</div>
-        <div class="exp-meta">1995 – 2014</div>
+        <div class="exp-role">Gerente y Propietario · Operación y Canales</div>
+        <div class="exp-company">Fashion Celular · Tienda de telefonía celular</div>
+        <div class="exp-meta">Querétaro, Qro. · 1995 – 2014</div>
         <ul class="exp-desc">
-          <li>Control administrativo de inventarios, recepción de mercancía y gestión de catálogos de productos técnicos.</li>
-          <li>Atención a solicitudes de distribuidores, facturación, precios y control de estándares de servicio.</li>
+          <li><strong>Operación integral del negocio</strong>: compras a proveedores, control de inventario, cobranza y atención a cliente.</li>
+          <li><strong>Coordinación con distribuidores y proveedores</strong> para asegurar disponibilidad de producto y precios correctos.</li>
+          <li><strong>Gestión de catálogo</strong> de productos: descripciones, precios y exhibición en punto de venta.</li>
+          <li><strong>Control de calidad</strong> en la atención al cliente y post-venta.</li>
         </ul>
       </div>
     </div>
-  </div>
 
-  <div class="card card-pad">
-    <h2 class="section-title">Dominio Técnico & Herramientas</h2>
-    <div class="skill-row">
-      <div class="lbl"><span>Google Sheets / Excel Avanzado (Tablas, Fórmulas, Control)</span><span>90%</span></div>
-      <div class="bar"><div class="bar-fill" style="width:90%"></div></div>
-    </div>
-    <div class="skill-row">
-      <div class="lbl"><span>Gestión de Proyectos & Tareas (Asana, Checklists)</span><span>88%</span></div>
-      <div class="bar"><div class="bar-fill" style="width:88%"></div></div>
-    </div>
-    <div class="skill-row">
-      <div class="lbl"><span>Estandarización de Contenido & Branding E-commerce</span><span>92%</span></div>
-      <div class="bar"><div class="bar-fill" style="width:92%"></div></div>
-    </div>
-
-    <div style="margin-top:14px;">
-      <div class="tags">
-        <span class="tag">Google Sheets / Excel</span>
-        <span class="tag">Asana</span>
-        <span class="tag">Google Drive</span>
-        <span class="tag">Publicación en Marketplaces</span>
-        <span class="tag">Nociones de Odoo ERP</span>
-        <span class="tag">Checklists de Calidad</span>
-        <span class="tag tag-alt">Atención a Distribuidores</span>
-        <span class="tag tag-alt">Organización de Archivos</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="card card-pad">
-    <h2 class="section-title">Formación Académica</h2>
     <div class="exp-item">
-      <div class="exp-logo">🎨</div>
+      <div class="exp-logo">MP</div>
       <div class="exp-body">
-        <div class="exp-role">Licenciatura en Artes Visuales</div>
-        <div class="exp-company">Universidad de las Artes — Aguascalientes</div>
-        <div class="exp-meta">Criterio estético, composición gráfica y tratamiento de imagen profesional.</div>
+        <div class="exp-role">Gerente de Sucursal · Coordinación Operativa</div>
+        <div class="exp-company">Multipack · Transporte de correspondencia</div>
+        <div class="exp-meta">San Juan del Río, Qro. · 1993 – 1995</div>
+        <ul class="exp-desc">
+          <li>Supervisión de operación, personal y logística de sucursal.</li>
+          <li>Coordinación con clientes corporativos y resolución de incidencias operativas.</li>
+        </ul>
       </div>
     </div>
+
     <div class="exp-item">
-      <div class="exp-logo">💻</div>
+      <div class="exp-logo" style="background:#6B1F2E;border-color:#4a1420;">INE</div>
       <div class="exp-body">
-        <div class="exp-role">Bootcamp Fullstack Developer</div>
-        <div class="exp-company">Funval International</div>
-        <div class="exp-meta">Estructuración de datos, manejo de plataformas web y metodologías ágiles.</div>
+        <div class="exp-role">Capacitador Asistente Electoral</div>
+        <div class="exp-company">Instituto Nacional Electoral (INE) · INEGI</div>
+        <div class="exp-meta">2018 – 2021</div>
+        <ul class="exp-desc">
+          <li>Coordinación de procesos con <strong>metodologías y checklists</strong> obligatorios.</li>
+          <li>Seguimiento a documentación y reporte de información estructurada.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- EDUCACIÓN -->
+  <div class="card card-pad">
+    <h2 class="section-title">Educación</h2>
+
+    <div class="edu-item">
+      <div class="edu-icon">🎓</div>
+      <div>
+        <div class="edu-role">Licenciatura en Artes Visuales</div>
+        <div class="edu-inst">Universidad de las Artes — Aguascalientes</div>
+        <div class="edu-meta">Título profesional · Cédula en trámite</div>
+      </div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-icon">💻</div>
+      <div>
+        <div class="edu-role">Bootcamp Fullstack Developer</div>
+        <div class="edu-inst">Academia Internacional Funval &amp; Mentors International</div>
+        <div class="edu-meta">Frontend, Backend, automatización y gestión de datos</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- APTITUDES -->
+  <div class="card card-pad">
+    <h2 class="section-title">Aptitudes Clave</h2>
+    <div class="tags">
+      <span class="tag">Gestión de proyectos</span>
+      <span class="tag">Coordinación de equipos</span>
+      <span class="tag">Seguimiento a entregables</span>
+      <span class="tag">Organización de información</span>
+      <span class="tag">Checklists y procesos</span>
+      <span class="tag">Control de calidad</span>
+      <span class="tag">Coordinación con distribuidores</span>
+      <span class="tag">Reporte de avances</span>
+      <span class="tag">Google Sheets avanzado</span>
+      <span class="tag">Documentación de producto</span>
+      <span class="tag-accent">Atención al detalle</span>
+      <span class="tag-accent">Comunicación clara</span>
+      <span class="tag tag-alt">Trabajo bajo presión</span>
+      <span class="tag tag-alt">Adaptabilidad</span>
+      <span class="tag tag-alt">Proactividad</span>
+    </div>
+  </div>
+
+  <!-- CERTIFICACIONES -->
+  <div class="card card-pad">
+    <h2 class="section-title">Certificaciones Destacadas</h2>
+    <ul class="cert-list">
+      <li><strong>E-commerce y Marketing Digital</strong> — Mentors International (2021)</li>
+      <li><strong>Creando tu Página Web Profesional</strong> — Mentors International (2021)</li>
+      <li><strong>Elementor Avanzado</strong> — Webempresa University (2021)</li>
+      <li><strong>Innovación y Emprendimiento</strong> — CCIA Aguascalientes (2018)</li>
+      <li><strong>Networking: Relaciones Ganar-Ganar</strong> — CCIA (2018)</li>
+    </ul>
+  </div>
+
+  <!-- DISPONIBILIDAD -->
+  <div class="card card-pad">
+    <h2 class="section-title">Disponibilidad</h2>
+    <div style="display:grid;grid-template-columns:1fr;gap:10px;font-size:13.5px;">
+      <div style="display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px dashed var(--ec-border);">
+        <span style="color:var(--ec-accent-dark);font-weight:800;">🕒</span>
+        <span><strong>Horario:</strong> Lunes a viernes, 9:00 am – 6:00 pm</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px dashed var(--ec-border);">
+        <span style="color:var(--ec-accent-dark);font-weight:800;">📍</span>
+        <span><strong>Ubicación:</strong> Querétaro · Zona Zibata / Zakia · Disponibilidad presencial en Terrapark Centenario</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center;padding:8px 0;">
+        <span style="color:var(--ec-accent-dark);font-weight:800;">⚡</span>
+        <span><strong>Ingreso:</strong> Inmediato · Documentación completa</span>
       </div>
     </div>
   </div>
 
+  <!-- CTA FINAL -->
   <div class="cta-final">
-    <h3>¿Interesados en revisar mi perfil?</h3>
-    <p>Disponibilidad inmediata para coordinar operaciones de e-commerce en Terrapark Centenario.</p>
+    <h3>¿Te interesa mi perfil? <span>Hablemos.</span></h3>
+    <p class="cta-sub">Disponibilidad inmediata para entrevista y contratación.</p>
+    <div class="cta-horario">🕒 Lunes a viernes · 9:00 am – 6:00 pm</div>
     <div class="cta-buttons">
-      <a href="mailto:anibalstringlo@gmail.com?subject=Postulaci%C3%B3n%20Coordinador%20de%20Operaciones%20E-commerce%20-%20Juan%20Carlos%20P%C3%A9rez" class="cta-btn mail">✉️ Enviar correo al reclutador</a>
-      <a href="https://wa.me/524464044521?text=Hola,%20env%C3%ADo%20mi%20perfil%20para%20la%20vacante%20de%20Coordinador%20de%20Operaciones%20E-commerce." target="_blank" class="cta-btn wa">💬 WhatsApp</a>
+      <a href="https://wa.me/524464044521?text=Hola%20Juan%20Carlos,%20vimos%20tu%20perfil%20para%20la%20vacante%20de%20Coordinador%20E-commerce.%20%C2%BFTienes%20disponibilidad%20para%20una%20entrevista?"
+         target="_blank" rel="noopener" class="cta-btn wa" data-visited="cta-wa">
+        💬 Contactar por WhatsApp
+      </a>
+      <a href="mailto:celides10@gmail.com?subject=Inter%C3%A9s%20en%20tu%20perfil%20-%20Coordinador%20E-commerce&body=Hola%20Juan%20Carlos,%20vimos%20tu%20perfil%20para%20la%20vacante%20de%20Coordinador%20E-commerce.%20%C2%BFTienes%20disponibilidad%20para%20una%20entrevista?"
+         class="cta-btn mail" data-visited="cta-mail">
+        ✉️ Enviar correo
+      </a>
     </div>
+  </div>
+
+  <div class="footer">
+    © <span id="year"></span> Juan Carlos Pérez Martínez · CV Coordinador E-commerce
+    <br>
+    <span class="version">📌 Versión E-commerce 1.0</span>
   </div>
 
 </div>
+
+<!-- WHATSAPP FLOTANTE -->
+<a href="https://wa.me/524464044521?text=Hola%20Juan%20Carlos,%20vimos%20tu%20perfil%20para%20la%20vacante%20de%20Coordinador%20E-commerce."
+   class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp"
+   data-visited="wa-float">
+  <svg viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+</a>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const VISITED_KEY = 'jc_cv_ecommerce_visited';
+  function getVisited(){
+    try { return JSON.parse(localStorage.getItem(VISITED_KEY)) || []; }
+    catch(e){ return []; }
+  }
+  function setVisited(arr){
+    try { localStorage.setItem(VISITED_KEY, JSON.stringify(arr)); } catch(e){}
+  }
+  document.addEventListener('click', function(e){
+    const target = e.target.closest('[data-visited]');
+    if(target){
+      const id = target.dataset.visited;
+      target.classList.add('visited');
+      const visited = getVisited();
+      if(!visited.includes(id)){
+        visited.push(id);
+        setVisited(visited);
+      }
+    }
+  });
+  (function applyVisited(){
+    const visited = getVisited();
+    document.querySelectorAll('[data-visited]').forEach(el=>{
+      if(visited.includes(el.dataset.visited)){
+        el.classList.add('visited');
+      }
+    });
+  })();
+
+  document.querySelector('.logo-ec').addEventListener('dblclick', ()=>{
+    if(confirm('¿Resetear botones visitados?')){
+      localStorage.removeItem(VISITED_KEY);
+      location.reload();
+    }
+  });
+</script>
 
 </body>
 </html>
